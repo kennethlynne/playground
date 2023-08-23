@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pnpm exec vite-node index.ts",
+    "start": "cross-env DEBUG=scraper nodemon",
     "typecheck": "tsc --noEmit",
     "lint": "tsc"
   },
@@ -13,7 +14,25 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/debug": "4.1.8",
+    "cross-env": "7.0.3",
+    "nodemon": "3.0.1",
     "typescript": "5.1.6",
+    "vite": "4.4.9",
     "vite-node": "0.34.2"
+  },
+  "dependencies": {
+    "debug": "4.3.4",
+    "puppeteer": "21.1.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "**/*"
+    ],
+    "ext": "js,json,ts",
+    "ignore": [
+      "src/**/*.spec.ts"
+    ],
+    "exec": "pnpm exec vite-node index.ts"
   }
 }
