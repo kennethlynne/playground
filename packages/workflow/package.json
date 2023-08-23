@@ -1,0 +1,39 @@
+{
+  "name": "workflow",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env DEBUG=workflow nodemon",
+    "typecheck": "tsc --noEmit",
+    "lint": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/debug": "4.1.8",
+    "@types/download": "8.0.2",
+    "@types/mime-types": "2.1.1",
+    "cross-env": "7.0.3",
+    "nodemon": "3.0.1",
+    "typescript": "5.1.6",
+    "vite": "4.4.9",
+    "vite-node": "0.34.2"
+  },
+  "dependencies": {
+    "debug": "4.3.4",
+    "download": "8.0.0",
+    "mime-types": "2.1.35",
+    "replicate": "0.16.1"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "**/*"
+    ],
+    "ext": "js,json,ts",
+    "ignore": [],
+    "exec": "pnpm exec vite-node index.ts"
+  }
+}
