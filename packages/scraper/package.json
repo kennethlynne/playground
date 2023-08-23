@@ -30,9 +30,7 @@
       "**/*"
     ],
     "ext": "js,json,ts",
-    "ignore": [
-      "src/**/*.spec.ts"
-    ],
+    "ignore": [],
     "exec": "pnpm exec vite-node index.ts"
   }
 }
